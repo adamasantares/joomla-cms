@@ -263,7 +263,9 @@ class PlgEditorTinymce extends JPlugin
 			}
 		}
 
-		$relative_urls = $this->params->get('relative_urls', '1');
+		$relative_urls = $this->params->get('relative_urls', '1');		if (is_numeric($height)) {
+			$html_height = $height; 
+		}
 
 		if ($relative_urls)
 		{
@@ -327,8 +329,13 @@ class PlgEditorTinymce extends JPlugin
 		$access = array_flip($access);
 
 		$html_height = $this->params->get('html_height', '550');
+		if (is_numeric($height)) {
+			$html_height = $height; 
+		}
 		$html_width  = $this->params->get('html_width', '');
-
+		if (is_numeric($width)) {
+			$html_height = $width; 
+		}
 		if ($html_width == 750)
 		{
 			$html_width = '';
